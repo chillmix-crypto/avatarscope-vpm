@@ -1,11 +1,8 @@
 {
-  "name": "AvatarScope by chill",
+  "name": "chill",
+  "author": "chill",
   "id": "com.chill.vpm",
   "url": "https://chillmix-crypto.github.io/avatarscope-vpm/index.json",
-  "author": {
-    "name": "chill",
-    "url": "https://chillmix.booth.pm/"
-  },
   "packages": {
     "com.chill.avatarscope": {
       "versions": {
@@ -14,7 +11,8 @@
           "displayName": "AvatarScope",
           "version": "0.9.0",
           "unity": "2022.3",
-          "description": "VRChat avatar inspector & non-destructive lossless optimizer (size, VRAM, polygon, parameter, compatibility analysis).",
+          "description": "VRChat avatar inspector and non-destructive lossless optimizer.",
+          "vrchatVersion": "2022.1.1",
           "author": {
             "name": "chill",
             "url": "https://chillmix.booth.pm/"
@@ -22,18 +20,17 @@
           "vpmDependencies": {
             "com.vrchat.avatars": ">=3.5.0"
           },
+          "dependencies": {},
           "keywords": [
             "vrchat",
             "avatar",
             "editor",
-            "analyzer",
-            "size",
-            "optimization",
-            "vrc"
+            "analyzer"
           ],
           "license": "Proprietary",
-          "documentationUrl": "https://chillmix.booth.pm/",
+          "documentationUrl": "https://chillmix-crypto.github.io/avatarscope-vpm/",
           "url": "https://chillmix-crypto.github.io/avatarscope-vpm/com.chill.avatarscope-0.9.0.zip",
+          "repo": "https://chillmix-crypto.github.io/avatarscope-vpm/index.json",
           "zipSHA256": "75b8aabfd9d7e6c0f35a703ff7aef48088e4cf4e7f00a29eaecf6c0d6a1e6533"
         }
       }
