@@ -10,22 +10,21 @@
     "com.chill.avatarscope": {
       "versions": {
         "0.9.0": {
-"name": "com.chill.avatarscope",
-  "displayName": "AvatarScope",
-  "version": "0.9.0",
-  "unity": "2022.3",
-  "description": "VRChatアバターの詳細（ファイル容量・VRAM・ポリゴン数・パラメータビット・互換性等）をUnity内で完結して可視化するDock型エディタ拡張。アップロード前に「重い箇所」を一発で特定できます。",
-  "author": {
-    "name": "chill",
-    "url": "https://chillmix.booth.pm/"
-  },
-  "vpmDependencies": {
-    "com.vrchat.avatars": ">=3.5.0"
-  },
-  "keywords": ["vrchat", "avatar", "editor", "analyzer", "size", "optimization", "vrc"],
-  "license": "Proprietary",
-  "documentationUrl": "https://chillmix.booth.pm/",
-  "changelogUrl": "https://chillmix.booth.pm/",
+          "name": "com.chill.avatarscope",
+          "displayName": "AvatarScope",
+          "version": "0.9.0",
+          "unity": "2022.3",
+          "description": "VRChatアバターの詳細（ファイル容量・VRAM・ポリゴン数・パラメータビット・互換性等）をUnity内で完結して可視化するDock型エディタ拡張。Visual Lossless Optimizer搭載。",
+          "author": {
+            "name": "chill",
+            "url": "https://chillmix.booth.pm/"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.5.0"
+          },
+          "keywords": ["vrchat", "avatar", "editor", "analyzer", "size", "optimization", "vrc"],
+          "license": "Proprietary",
+          "documentationUrl": "https://chillmix.booth.pm/",
           "url": "https://chillmix-crypto.github.io/avatarscope-vpm/com.chill.avatarscope-0.9.0.zip",
           "zipSHA256": "75b8aabfd9d7e6c0f35a703ff7aef48088e4cf4e7f00a29eaecf6c0d6a1e6533"
         }
