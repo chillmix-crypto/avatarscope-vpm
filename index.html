@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AvatarScope - VRChatアバター詳細可視化プラグイン</title>
+<meta name="description" content="VRChatアバターのダウンロード容量・VRAM・パフォーマンスをUnity内で完全可視化。Visual Lossless Optimizer搭載。">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1535 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 60px 24px; }
+  header { text-align: center; margin-bottom: 48px; }
+  h1 {
+    font-size: 3em; margin-bottom: 12px;
+    background: linear-gradient(90deg, #6FCF7C, #56CCF2);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .tagline { font-size: 1.15em; color: #b0b0b0; }
+  .version-badge {
+    display: inline-block; background: #5a4ba0; padding: 4px 14px;
+    border-radius: 20px; font-size: 0.85em; margin-top: 12px;
+  }
+  .card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 28px; margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+  }
+  .card h2 {
+    font-size: 1.4em; margin-bottom: 16px; color: #6FCF7C;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .card h2 .num {
+    display: inline-block; width: 32px; height: 32px;
+    background: #6FCF7C; color: #0f1535;
+    border-radius: 50%; text-align: center; line-height: 32px;
+    font-weight: bold; font-size: 0.85em;
+  }
+  .vcc-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: linear-gradient(90deg, #6FCF7C, #56CCF2);
+    color: #0f1535; padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; font-weight: bold; font-size: 1.1em;
+    margin: 8px 8px 8px 0; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .vcc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(111,207,124,0.3); }
+  .url-row { display: flex; gap: 8px; margin: 12px 0; }
+  .url-box {
+    flex: 1; background: #0a0a1a; border: 1px solid #444;
+    padding: 12px 16px; border-radius: 6px; font-family: monospace;
+    font-size: 0.95em; color: #56CCF2; overflow-x: auto; white-space: nowrap;
+  }
+  .copy-btn {
+    background: #444; color: #fff; border: none; padding: 12px 20px;
+    border-radius: 6px; cursor: pointer; font-size: 0.95em;
+    transition: background 0.2s;
+  }
+  .copy-btn:hover { background: #666; }
+  .copy-btn.copied { background: #6FCF7C; color: #0f1535; }
+  ol { margin-left: 24px; }
+  ol li { margin: 8px 0; }
+  .alt-method {
+    margin-top: 16px; padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.92em; color: #aaa;
+  }
+  footer {
+    text-align: center; margin-top: 48px; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #888; font-size: 0.9em;
+  }
+  footer a { color: #56CCF2; text-decoration: none; }
+  .features {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-top: 16px;
+  }
+  .feature {
+    background: rgba(255,255,255,0.03); padding: 14px;
+    border-radius: 8px; border-left: 3px solid #6FCF7C;
+  }
+  .feature strong { color: #6FCF7C; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>AvatarScope</h1>
+    <p class="tagline">VRChatアバターの詳細を Unity 内で完全可視化</p>
+    <span class="version-badge">v0.9.0</span>
+  </header>
+
+  <div class="card">
+    <h2>主な機能</h2>
+    <div class="features">
+      <div class="feature"><strong>容量計測</strong><br>VRChatの実アップロード値と完全一致</div>
+      <div class="feature"><strong>VRChat 公式準拠</strong><br>パネル全項目と並べて比較可能</div>
+      <div class="feature"><strong>Performance Rank</strong><br>PC/Quest 両方表示</div>
+      <div class="feature"><strong>Visual Lossless Optimizer</strong><br>劣化ゼロ保証の非破壊最適化</div>
+      <div class="feature"><strong>Before/After 画像比較</strong><br>4方向で視覚劣化を確認</div>
+      <div class="feature"><strong>UV密度ベース縮小</strong><br>数学的に劣化ゼロのテクスチャ最適化</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">1</span>VCC に追加（推奨）</h2>
+    <p>下のボタンをクリックすると VCC が起動して URL が自動追加されます。</p>
+    <a href="vcc://vpm/addRepo?url=https://chillmix-crypto.github.io/avatarscope-vpm/index.json" class="vcc-btn">
+      ▶ Add to VCC（ワンクリック）
+    </a>
+    <div class="alt-method">
+      ボタンが効かない場合は下の URL をコピーして VCC の Settings → Packages → Add Repository に貼り付け：
+      <div class="url-row">
+        <div class="url-box" id="vpm-url">https://chillmix-crypto.github.io/avatarscope-vpm/index.json</div>
+        <button class="copy-btn" onclick="copyUrl()">コピー</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">2</span>プロジェクトにインストール</h2>
+    <ol>
+      <li>VCC で対象プロジェクトの <strong>「Manage Project」</strong>を開く</li>
+      <li>パッケージ一覧に <strong>AvatarScope</strong> が表示される</li>
+      <li>右の <strong>「+」</strong>ボタンでインストール</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">3</span>使い方</h2>
+    <ol>
+      <li>Unity を起動</li>
+      <li>メニューバーから <code>Tools → AvatarScope → Open Window</code></li>
+      <li>Avatar 欄に対象アバター（VRCAvatarDescriptor 付き）をセット</li>
+      <li><strong>Refresh</strong> ボタンで解析開始</li>
+    </ol>
+    <div class="alt-method">
+      <strong>真の容量計測モード:</strong> <code>Measure real size</code> にチェックを入れて Refresh すると、
+      VRChat 実アップロード値と完全一致するダウンロードサイズが取得できます（数十秒かかります）。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2><span class="num">4</span>非破壊最適化（Visual Lossless）</h2>
+    <ol>
+      <li>AvatarScope ウィンドウ上部の <strong>Optimize (Lossless)</strong> ボタンをクリック</li>
+      <li>候補一覧が表示されるので不要な操作のチェックを外す</li>
+      <li><strong>選択中の操作を適用</strong> をクリック</li>
+      <li>完了後、4方向の Before/After 画像比較ウィンドウが開く</li>
+      <li>劣化検出時は自動でロールバック、視覚劣化ゼロを保証</li>
+    </ol>
+    <div class="alt-method">
+      個別 Undo は <code>Tools → AvatarScope → Optimization History</code> から可能。
+    </div>
+  </div>
+
+  <footer>
+    <p>© chill / <a href="https://chillmix.booth.pm/" target="_blank">BOOTH</a></p>
+    <p style="margin-top: 8px;">問い合わせは購入元 BOOTH のメッセージ機能からお願いします。</p>
+  </footer>
+</div>
+
+<script>
+function copyUrl() {
+  const url = document.getElementById('vpm-url').textContent;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = '✓ コピー済';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'コピー';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>
