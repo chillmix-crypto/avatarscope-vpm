@@ -6,12 +6,39 @@
   "packages": {
     "com.chill.avatarscope": {
       "versions": {
+        "0.10.1": {
+          "name": "com.chill.avatarscope",
+          "displayName": "AvatarScope",
+          "version": "0.10.1",
+          "unity": "2022.3",
+          "description": "VRChat avatar inspector and non-destructive lossless optimizer. Real upload size (cached), Visual Lossless Optimizer, UV-aware texture resize.",
+          "vrchatVersion": "2022.1.1",
+          "author": {
+            "name": "chill",
+            "url": "https://chillmix.booth.pm/"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.5.0"
+          },
+          "dependencies": {},
+          "keywords": [
+            "vrchat",
+            "avatar",
+            "editor",
+            "analyzer"
+          ],
+          "license": "Proprietary",
+          "documentationUrl": "https://chillmix-crypto.github.io/avatarscope-vpm/",
+          "url": "https://chillmix-crypto.github.io/avatarscope-vpm/com.chill.avatarscope-0.10.1.zip",
+          "repo": "https://chillmix-crypto.github.io/avatarscope-vpm/index.json",
+          "zipSHA256": "244141fcb717ceabeca5823c43c0ab4c4ed44a825fa382dd681c10598bcc372b"
+        },
         "0.10.0": {
           "name": "com.chill.avatarscope",
           "displayName": "AvatarScope",
           "version": "0.10.0",
           "unity": "2022.3",
-          "description": "VRChat avatar inspector and non-destructive lossless optimizer. Real upload size, Visual Lossless Optimizer, UV-aware texture resize.",
+          "description": "VRChat avatar inspector and non-destructive lossless optimizer.",
           "vrchatVersion": "2022.1.1",
           "author": {
             "name": "chill",
