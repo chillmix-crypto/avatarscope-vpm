@@ -14,7 +14,7 @@
           "displayName": "AvatarScope",
           "version": "0.9.0",
           "unity": "2022.3",
-          "description": "VRChatアバターの詳細（ファイル容量・VRAM・ポリゴン数・パラメータビット・互換性等）をUnity内で完結して可視化するDock型エディタ拡張。Visual Lossless Optimizer搭載。",
+          "description": "VRChat avatar inspector & non-destructive lossless optimizer (size, VRAM, polygon, parameter, compatibility analysis).",
           "author": {
             "name": "chill",
             "url": "https://chillmix.booth.pm/"
@@ -22,7 +22,15 @@
           "vpmDependencies": {
             "com.vrchat.avatars": ">=3.5.0"
           },
-          "keywords": ["vrchat", "avatar", "editor", "analyzer", "size", "optimization", "vrc"],
+          "keywords": [
+            "vrchat",
+            "avatar",
+            "editor",
+            "analyzer",
+            "size",
+            "optimization",
+            "vrc"
+          ],
           "license": "Proprietary",
           "documentationUrl": "https://chillmix.booth.pm/",
           "url": "https://chillmix-crypto.github.io/avatarscope-vpm/com.chill.avatarscope-0.9.0.zip",
