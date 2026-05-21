@@ -6,6 +6,33 @@
   "packages": {
     "com.chill.avatarscope": {
       "versions": {
+        "0.10.0": {
+          "name": "com.chill.avatarscope",
+          "displayName": "AvatarScope",
+          "version": "0.10.0",
+          "unity": "2022.3",
+          "description": "VRChat avatar inspector and non-destructive lossless optimizer. Real upload size, Visual Lossless Optimizer, UV-aware texture resize.",
+          "vrchatVersion": "2022.1.1",
+          "author": {
+            "name": "chill",
+            "url": "https://chillmix.booth.pm/"
+          },
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.5.0"
+          },
+          "dependencies": {},
+          "keywords": [
+            "vrchat",
+            "avatar",
+            "editor",
+            "analyzer"
+          ],
+          "license": "Proprietary",
+          "documentationUrl": "https://chillmix-crypto.github.io/avatarscope-vpm/",
+          "url": "https://chillmix-crypto.github.io/avatarscope-vpm/com.chill.avatarscope-0.10.0.zip",
+          "repo": "https://chillmix-crypto.github.io/avatarscope-vpm/index.json",
+          "zipSHA256": "7c6381ed88c22b937e9eaa88132105bc05db339e7ebaa4499ff85163d826ffaa"
+        },
         "0.9.0": {
           "name": "com.chill.avatarscope",
           "displayName": "AvatarScope",
